@@ -17,7 +17,7 @@ sequenceDiagram
 
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
     activate server
-    server-->>browser: Status Code 302
+    server-->>browser: URL Request: Status Code 302
     deactivate server
 
     Note right of browser: The server processes the POST request and returns a status code 302, with which the browser is asked to make a new GET request
