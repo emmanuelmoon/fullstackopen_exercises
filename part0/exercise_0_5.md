@@ -1,5 +1,6 @@
 ```
-participant browser
+sequenceDiagram
+    participant browser
     participant server
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
@@ -24,7 +25,7 @@ participant browser
     server-->>browser: [{ "content": "How are you doing?", "date": "2023-05-03" }, ... ]
     deactivate server
 
-    Note right of browser: Browser executes the callback function which formats and renders the JSON
+    Note right of browser: Browser executes the callback function, which formats and renders the JSON
 
 
 ```
@@ -56,7 +57,7 @@ sequenceDiagram
     server-->>browser: [{ "content": "How are you doing?", "date": "2023-05-03" }, ... ]
     deactivate server
 
-    Note right of browser: Browser executes the callback function which formats and renders the JSON
+    Note right of browser: Browser executes the callback function, which formats and renders the JSON
 
 
 ```
