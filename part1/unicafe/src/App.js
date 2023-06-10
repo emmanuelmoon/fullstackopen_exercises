@@ -5,34 +5,20 @@ const Button = ({ handleClick, text }) =>
     <button onClick={handleClick}>{text}</button>
 )
 
-const Display = ({ text, value }) => (
+const StatisticLine = ({ text, value }) => (
     <p>{text} {value}</p>
 )
-
-const Average = ({ good, bad, total }) => {
-    if (total > 0) {
-        console.log((good - bad) / total);
-        return (<p>Average {(good - bad) / total}</p>)
-    }
-}
-
-const Positive = ({ good, total }) => {
-    if (total > 0) {
-        return <p>positive {good / total * 100} %</p>
-    }
-}
-
 const Statistics = ({ good, neutral, bad }) => {
     const total = good + neutral + bad;
     if (total > 0) {
         return (
             <div>
-                <Display text={'good'} value={good} />
-                <Display text={'neutral'} value={neutral} />
-                <Display text={'bad'} value={bad} />
-                <Display text={'all'} value={total} />
-                <Average good={good} bad={bad} total={total} />
-                <Positive good={good} total={total} />
+                <StatisticLine text={'good'} value={good} />
+                <StatisticLine text={'neutral'} value={neutral} />
+                <StatisticLine text={'bad'} value={bad} />
+                <StatisticLine text={'all'} value={total} />
+                <StatisticLine text={'average'} value={(good - bad) / total} />
+                <StatisticLine text={'positive'} value={good / total * 100 + " %"} />
             </div>)
     }
     return (
