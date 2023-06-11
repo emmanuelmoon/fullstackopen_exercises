@@ -18,6 +18,7 @@ const App = () => {
 
   const [selected, setSelected] = useState(0)
   const [points, setPoints] = useState(Array(anecdotes.length).fill(0))
+  const [max, setMax] = useState(0);
 
   const handleSelected = () => {
     const randNum = Math.floor(Math.random() * anecdotes.length);
@@ -28,7 +29,11 @@ const App = () => {
   const handlePoints = () => {
     const copy = [...points]
     copy[selected] += 1
+    const newMax = copy.indexOf(Math.max(...copy));
     setPoints(copy);
+    if (newMax !== max) {
+      setMax(newMax)
+    }
   }
 
   return (
@@ -40,8 +45,8 @@ const App = () => {
       <Button handleClick={handleSelected} text={'next anecdote'} />
 
       <h1>Anecdote with most votes</h1>
-      <p>{anecdotes[points.indexOf(Math.max(...points))]}</p>
-      <p>has {Math.max(...points)} votes</p>
+      <p>{anecdotes[max]}</p>
+      <p>has {points[max]} votes</p>
     </div>
   )
 }
