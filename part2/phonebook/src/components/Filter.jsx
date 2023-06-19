@@ -1,7 +1,6 @@
 const Filter = ({ persons, filterName, changeFilterName }) => {
   return (
     <>
-      <h2>Phonebook</h2>
       find a new name
       <input value={filterName} onChange={changeFilterName} />
       <ul>
