@@ -6,7 +6,7 @@ const Display = ({ countries, setChosenCountry }) => {
   } else if (countries.length <= 10 && countries.length > 1) {
     return countries.map((country) => {
       return (
-        <li>
+        <li key={country.name.common}>
           {country.name.common}
           <button
             onClick={() => {
