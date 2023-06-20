@@ -1,3 +1,5 @@
+import Country from "./Country";
+
 const Display = ({ countries, setChosenCountry }) => {
   if (countries === null || countries.length === 0) {
     return null;
@@ -19,26 +21,7 @@ const Display = ({ countries, setChosenCountry }) => {
       );
     });
   } else if (countries.length === 1) {
-    const country = countries[0];
-    let keys = Object.keys(country.languages);
-    return (
-      <>
-        <h1>{country.name.common}</h1>
-        {country.capital ? <p>capital {country.capital} </p> : null}
-        <p>area {country.area}</p>
-        <h2>languages:</h2>
-        <ul>
-          {keys.map((key) => (
-            <li key={country.languages[key]}>{country.languages[key]}</li>
-          ))}
-        </ul>
-        <img
-          style={{ width: "175px", height: "auto" }}
-          src={`${country.flags.svg}`}
-          alt={`Flag of ${country.name.common}`}
-        />
-      </>
-    );
+    return <Country country={countries[0]} />;
   }
 };
 
