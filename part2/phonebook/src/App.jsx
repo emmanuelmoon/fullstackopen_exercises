@@ -50,9 +50,9 @@ const App = () => {
             }, 3000);
             setPersons(
               persons.map((person) => {
-                return person.name !== changedPerson.name
-                  ? person
-                  : returnedPerson;
+                return person.name === changedPerson.name
+                  ? returnedPerson
+                  : person;
               })
             );
           })
