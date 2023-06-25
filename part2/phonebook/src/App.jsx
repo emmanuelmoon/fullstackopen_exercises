@@ -70,6 +70,9 @@ const App = () => {
             );
           });
       }
+
+      setNewName("");
+      setNewPerson("");
       return;
     }
 
