@@ -72,7 +72,7 @@ const App = () => {
       }
 
       setNewName("");
-      setNewPerson("");
+      setNewNumber("");
       return;
     }
 
