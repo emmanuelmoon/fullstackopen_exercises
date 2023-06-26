@@ -86,6 +86,10 @@ const App = () => {
         setPersons(persons.concat(addedPerson));
         setNewName("");
         setNewNumber("");
+      })
+      .catch((error) => {
+        console.log(error.response.data);
+        setErrorMessage(error.response.data.error);
       });
   };
 
